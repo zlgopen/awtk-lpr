@@ -32,6 +32,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+			<activity
+					android:name="com.pcl.ocr.ui.LPRActivity"
+					android:label="LPRActivity" 
+					android:exported="true">
+					<intent-filter>
+							<action android:name="android.intent.action.MAIN" >
+							</action>
+					</intent-filter>
+			</activity>
     </application>
 
 </manifest>
