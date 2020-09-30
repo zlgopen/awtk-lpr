@@ -2,7 +2,7 @@
 // Created by 庾金科 on 20/09/2017.
 //
 #include "../include/PlateDetection.h"
-
+#include "opencv2/imgproc/types_c.h"
 #include "util.h"
 
 namespace pr{

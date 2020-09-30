@@ -18,7 +18,7 @@ list(APPEND SOURCE_FILES ${SOURCE_FILES_CORE})
 #修改修改为自己的opencv-android-sdk 的JNI路径
 #set(OpenCV_DIR /home/aleyn/Android/TestProject/OpenCV-android-sdk/sdk/native/jni)
 #set(OpenCV_DIR D:/Android/TestProject/OpenCV-android-sdk/sdk/native/jni)
-set(OpenCV_DIR ${CMAKE_CURRENT_LIST_DIR}/../../../opencv342/sdk/native/jni)
+set(OpenCV_DIR ${CMAKE_CURRENT_LIST_DIR}/../../../opencv440/sdk/native/jni)
 message( WARNING ${OpenCV_DIR})
 find_package(OpenCV REQUIRED)
 
