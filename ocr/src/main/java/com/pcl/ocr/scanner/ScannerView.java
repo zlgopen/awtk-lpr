@@ -9,7 +9,9 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Size;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
 import androidx.camera.core.AspectRatio;
@@ -118,7 +120,9 @@ public class ScannerView extends RelativeLayout {
     private void initUseCase() {
         // 1. preview
         int screenAspectRatio = getPreviewRatio();
-        int rotation = mPreviewView.getDisplay().getRotation();
+        Display display = ((WindowManager) getContext().getSystemService(
+                Context.WINDOW_SERVICE)).getDefaultDisplay();
+        int rotation = display.getRotation();
         preview = new Preview.Builder()
                 .setTargetAspectRatio(screenAspectRatio)
                 .setTargetRotation(rotation)
@@ -135,7 +139,10 @@ public class ScannerView extends RelativeLayout {
 
     private int getPreviewRatio() {
         DisplayMetrics metrics = new DisplayMetrics();
-        mPreviewView.getDisplay().getRealMetrics(metrics);
+        Display display = ((WindowManager) getContext().getSystemService(
+                Context.WINDOW_SERVICE)).getDefaultDisplay();
+
+        display.getRealMetrics(metrics);
         int width = metrics.widthPixels;
         int height = metrics.heightPixels;
         double previewRatio = (double) Math.max(width, height) / Math.min(width, height);
