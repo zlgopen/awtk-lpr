@@ -3,7 +3,11 @@
 
 车牌识别库(Android版本)。
 
+> 首先感谢 [北京智云视图科技有限公司](http://www.zeusee.com/) 开源这么实用的软件，感谢[Aleyn](https://github.com/AleynP) 提供使用文档和android的工程。
+
 ### 更新说明
+
+本项目在原来的基础之上做了如下改进：
 
 * 1. 升级 OpenCV SDK 到 4.40。
 * 2. 升级 NDK 到 r20b，否则与 AWTK 不兼容。
