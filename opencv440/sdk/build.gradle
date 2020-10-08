@@ -97,6 +97,13 @@ println "OpenCV: " +openCVersionName + " " + project.buildscript.sourceFile
 
 android {
     compileSdkVersion 26
+    lintOptions {
+       abortOnError false        // true by default
+       checkAllWarnings false
+       checkReleaseBuilds false
+       ignoreWarnings true       // false by default
+       quiet true                // false by default
+    }
 
     defaultConfig {
         minSdkVersion 21

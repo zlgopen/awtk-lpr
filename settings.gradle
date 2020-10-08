@@ -1,3 +1,6 @@
 include ':lpr'
+
 include ':openCV'
+project(':openCV').projectDir = new File(settingsDir, 'opencv440/sdk')
+
 include ':ocr'

@@ -53,8 +53,10 @@ cd build/lprdemo
 在文件最后增加如下代码：
 
 ```
+include ':app'
+
 include ':openCV'
-project(':openCV').projectDir = new File(settingsDir, '../../../awtk-lpr-android/openCV')
+project(':openCV').projectDir = new File(settingsDir, '../../../awtk-lpr-android/opencv440/sdk')
 
 include ':ocr'
 project(':ocr').projectDir = new File(settingsDir, '../../../awtk-lpr-android/ocr')

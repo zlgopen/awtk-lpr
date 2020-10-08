@@ -12,3 +12,5 @@
 /captures
 .externalNativeBuild
 /openCV/build/
+opencv440/sdk/.cxx
+opencv440/sdk/build
