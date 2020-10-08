@@ -9,9 +9,10 @@
 
 本项目在原来的基础之上做了如下改进：
 
-* 1. 升级 OpenCV SDK 到 4.40。
-* 2. 升级 NDK 到 r20b(否则与 AWTK 不兼容)。
-* 3. 修复第二次进去 getDisplay() 返回 null，导致奔溃的问题。
+* 1. 增加arm64-v8a支持。
+* 2. 升级 OpenCV SDK 到 4.40。
+* 3. 升级 NDK 到 r20b(否则与 AWTK 不兼容)。
+* 4. 修复第二次进去 getDisplay() 返回 null，导致奔溃的问题。
 
 ### 使用方法
 
