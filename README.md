@@ -1,17 +1,17 @@
 ## awtk-lpr-android 
 --------------------------
 
-车牌识别库(Android版本)。
+车牌识别库 (Android 版本）。
 
-> 首先感谢 [北京智云视图科技有限公司](http://www.zeusee.com/) 开源这么实用的软件，感谢[Aleyn](https://github.com/AleynP) 提供使用文档和android的工程。
+> 首先感谢 [北京智云视图科技有限公司](http://www.zeusee.com/) 开源这么实用的软件，感谢 [Aleyn](https://github.com/AleynP) 提供使用文档和 android 的工程。
 
 ### 更新说明
 
 本项目在原来的基础之上做了如下改进：
 
-* 1. 增加arm64-v8a支持。
+* 1. 增加 arm64-v8a 支持。
 * 2. 升级 OpenCV SDK 到 4.40。
-* 3. 升级 NDK 到 r20b(否则与 AWTK 不兼容)。
+* 3. 升级 NDK 到 r20b（否则与 AWTK 不兼容）。
 * 4. 修复第二次进去 getDisplay() 返回 null，导致奔溃的问题。
 
 ### 使用方法
@@ -42,7 +42,7 @@ python create_project.py ../awtk-mobile-plugins/lpr_build.json
 
 #### 3. 修改配置
 
-创建好项目之后，需要修改两处配置，先进入lprdemo目录：
+创建好项目之后，需要修改两处配置，先进入 lprdemo 目录：
 
 ```
 cd build/lprdemo
@@ -91,6 +91,18 @@ ext {
 
 ```
 adb install -r ./app/build/outputs/apk/debug/app-debug.apk
+```
+
+#### 5. 其它
+
+如果设备没有"返回"按钮，可以用下面的 patch 添加"返回"按钮。
+
+[add_back_button.diff](patch_add_back/add_back_button.diff)
+
+使用方法（在 bash 下运行）：
+
+```
+patch -p1 <patch_add_back/add_back_button.diff
 ```
 
 ----------------------------------------------------------------
