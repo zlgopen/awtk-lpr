@@ -95,7 +95,7 @@ adb install -r ./app/build/outputs/apk/debug/app-debug.apk
 
 #### 5. 其它
 
-如果设备没有"返回"按钮，可以用下面的 patch 添加"返回"按钮。
+* 如果设备没有"返回"按钮，可以用下面的 patch 添加"返回"按钮。
 
 [add_back_button.diff](patch_add_back/add_back_button.diff)
 
@@ -103,6 +103,36 @@ adb install -r ./app/build/outputs/apk/debug/app-debug.apk
 
 ```
 patch -p1 <patch_add_back/add_back_button.diff
+```
+
+* 如果需要进入全屏可以修改LPRActivity.java的onCreate函数，加入下面的代码：
+
+```java
+        WindowManager.LayoutParams attrs = this.getWindow().getAttributes();
+        attrs.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        this.getWindow().setAttributes(attrs);
+```
+
+```java
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        WindowManager.LayoutParams attrs = this.getWindow().getAttributes();
+        attrs.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        this.getWindow().setAttributes(attrs);
+
+        setContentView(R.layout.activity_lpr);
+        scannerView = findViewById(R.id.scanner_view);
+				this.closeButton = (Button)this.findViewById(R.id.close);
+				this.closeButton.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						finish();
+					}
+				});
+        
+        startCamera();
+    }
 ```
 
 ----------------------------------------------------------------
